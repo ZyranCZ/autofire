@@ -9,10 +9,10 @@ Autofire can be used everywhere, restricted to battles, or restricted to the ove
 <img width="809" height="753" alt="image" src="https://github.com/user-attachments/assets/ddcb6196-9f4c-4631-ad42-07f837f4338f" />
 
 **Check out my other mods:**<br>
-[Autofire A/B + Directional Keys Mod](https://github.com/ZyranCZ/Move-Category-Preview)<br>
-[Steel and/or Fairy and/or Typing Charts](https://github.com/ZyranCZ/Steel-and-or-Fairy-and-or-Typing-Charts)<br>
-[Move Category (PHYS/SPEC) Preview](https://github.com/ZyranCZ/Move-Category-Preview)<br>
-[Special Stat Split
+* [Autofire A/B + Directional Keys Mod](https://github.com/ZyranCZ/Move-Category-Preview)<br>
+* [Steel and/or Fairy and/or Typing Charts](https://github.com/ZyranCZ/Steel-and-or-Fairy-and-or-Typing-Charts)<br>
+* [Move Category (PHYS/SPEC) Preview](https://github.com/ZyranCZ/Move-Category-Preview)<br>
+* [Special Stat Split
 ](https://github.com/ZyranCZ/Special-Stat-Split/)<br>
 ---
 
