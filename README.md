@@ -6,6 +6,8 @@ Hold **A**, **B**, or optionally the **D-Pad** to automatically repeat button pr
 
 Autofire can be used everywhere, restricted to battles, or restricted to the overworld and menus.
 
+<img width="809" height="753" alt="image" src="https://github.com/user-attachments/assets/ddcb6196-9f4c-4631-ad42-07f837f4338f" />
+
 ---
 
 ## Features
