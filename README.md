@@ -14,6 +14,8 @@ Autofire can be used everywhere, restricted to battles, or restricted to the ove
 * [Move Category (PHYS/SPEC) Preview](https://github.com/ZyranCZ/Move-Category-Preview)<br>
 * [Special Stat Split
 ](https://github.com/ZyranCZ/Special-Stat-Split/)<br>
+* [Enemy HP Visible](https://github.com/ZyranCZ/Enemy-HP)
+* [Can Always Escape](https://github.com/ZyranCZ/Can-Always-Escape)
 ---
 
 ## Features
