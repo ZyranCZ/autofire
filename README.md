@@ -1,357 +1,79 @@
 # Autofire AB
 
-A configurable autofire mod for **Gen1Recomp**.
+Holding A, B or a direction repeats the press on a timer, so text, battles and
+menus can be advanced without mashing.
 
-Hold **A**, **B**, or optionally the **D-Pad** to automatically repeat button presses without constantly mashing the controls.
+## Try it
 
-Autofire can be used everywhere, restricted to battles, or restricted to the overworld and menus.
+1. Copy the `a_autofire` folder into the game's `mods/` directory.
+2. Launch the game and press **F10** to open the mod manager.
+3. Enable **Autofire AB**, then open its options to set the timings.
 
-<img width="809" height="753" alt="image" src="https://github.com/user-attachments/assets/ddcb6196-9f4c-4631-ad42-07f837f4338f" />
+## Options
 
-**Check out my other mods:**<br>
-* [Autofire A/B + Directional Keys Mod](https://github.com/ZyranCZ/autofire)<br>
-* [Steel and/or Fairy and/or Typing Charts](https://github.com/ZyranCZ/Steel-and-or-Fairy-and-or-Typing-Charts)<br>
-* [Move Category (PHYS/SPEC) Preview](https://github.com/ZyranCZ/Move-Category-Preview)<br>
-* [Special Stat Split
-](https://github.com/ZyranCZ/Special-Stat-Split/)<br>
-* [Enemy HP Visible](https://github.com/ZyranCZ/Enemy-HP)
-* [Can Always Escape](https://github.com/ZyranCZ/Can-Always-Escape)
-* [Trainers Let You Choose Lead Pokemon](https://github.com/ZyranCZ/Trainers-Let-You-Choose-Lead-Pokemon)
-* [Evolve in Battle](https://github.com/ZyranCZ/Evolve-in-Battle)
-* [HELP Story Guide](https://github.com/ZyranCZ/HELP-Story-Guide/)
-* [Professor Oak's Pokémon DV/Stat Appraisal](https://github.com/ZyranCZ/Professor-Oak-DV-STAT-Evaluation)
+| Row | Values | Default |
+| --- | --- | --- |
+| `AUTOFIRE BUTTONS` | OFF / A ONLY / B ONLY / A AND B | A AND B |
+| `HOLD BEFORE REPEAT` | 150 – 500 ms | 250 ms |
+| `REPEAT EVERY` | 50 / 100 / 150 / 200 / 300 / 400 / 500 ms | 200 ms |
+| `DIRECTIONAL KEYS` | ON / OFF | OFF |
+| `AUTOFIRE IN` | EVERYWHERE / BATTLE ONLY / WORLD ONLY | EVERYWHERE |
 
+**HOLD BEFORE REPEAT** is what keeps one tap being one press. Nothing repeats
+until the button has been down for the whole window, so an ordinary press
+behaves exactly as it does without the mod.
 
+Every button shares one delay and one rate, but each keeps its own countdown —
+pressing B partway through an A hold gives B a full delay window rather than
+starting it mid-burst.
 
----
+**DIRECTIONAL KEYS** adds UP/DOWN/LEFT/RIGHT. This does not change walking:
+the overworld reads held state, not press edges, so a held direction already
+repeats on its own out there. What it buys is cursor repeat in menus — the
+Pokédex, the bag, the PC, the naming grid — which move on press edges.
 
-## Features
+Screens that already implement hold-to-scroll for themselves (a `ListMenu`
+with `keyRepeat`, which `pokedex_plus` turns on for five of its lists) keep
+their own timing; autofire leaves their directions alone rather than stacking
+a second scroll on top. A and B still autofire there.
 
-* Autofire for **A**
-* Autofire for **B**
-* Optional autofire for **UP / DOWN / LEFT / RIGHT**
-* Adjustable delay before autofire begins
-* Adjustable repeat speed
-* Separate timing for each held button
-* Battle-only mode
-* World-only mode
-* Protection against double-scrolling in menus that already support held directional input
-* Does not interfere with the real **A+B+SELECT+START soft reset**
+**AUTOFIRE IN** narrows where autofire applies.
 
----
+`BATTLE ONLY` is the escape hatch for the overworld's hazards: holding A keeps
+re-triggering whatever you are facing, a yes/no prompt that appears mid-hold
+answers itself, and held B repeats cancel, which walks back out of menus.
 
-# Installation
+`WORLD ONLY` is the mirror — autofire for overworld text and menus, with
+battles left fully manual so a held button can never pick a move or burn a turn
+on its own. A battle starting mid-hold cuts autofire off immediately.
 
-1. Download the latest release.
-2. Extract the `a_autofire` folder into the Gen1Recomp `mods/` directory.
-3. Launch Gen1Recomp.
-4. Press **F10** to open the Mod Manager.
-5. Enable **Autofire AB**.
-6. Open the mod's Options and configure it to your preference.
+## Why the timings are a fixed list
 
----
+Game logic advances on a fixed 60 Hz clock, so one logic step is 16.67 ms and
+that is the smallest interval an input can be repeated at. The offered values
+are the ones that land on a whole number of steps — 50 ms is exactly 3 steps,
+250 ms is exactly 15. A free-typed number would be rounded to the same grid
+without saying so.
 
-# Options
+## How it works
 
-## AUTOFIRE BUTTONS
+The engine calls the `input.step` hook once per logic step, immediately before
+`Input:step` promotes queued presses into that step's edges — the seam it
+documents for autoplay and accessibility tools. While a button is held past the
+delay window, this mod pushes its name onto `input.pressQueue` on schedule, and
+the engine turns it into a press edge indistinguishable from a real one.
 
-Controls which face buttons use autofire.
+It never writes `input.state`, so held-button bookkeeping stays owned by real
+input sources. That matters most in `A AND B` mode: the A+B+SELECT+START soft
+reset still counts only genuinely held buttons, so autofire can never trip it,
+and a real four-button chord still works.
 
-Available settings:
+## Tests
 
-* **OFF**
-* **A ONLY**
-* **B ONLY**
-* **A AND B**
+`tests/autofire_test.lua` drives the mod against the engine's real
+`src/core/Input.lua` and a stand-in for `Game:step` that preserves the call
+order. Run it from the game's root:
 
-Default:
-
-**A AND B**
-
----
-
-## HOLD BEFORE REPEAT
-
-Controls how long a button must remain held before autofire begins.
-
-Available settings:
-
-* 150 ms
-* 200 ms
-* 250 ms
-* 300 ms
-* 400 ms
-* 500 ms
-
-Default:
-
-**250 ms**
-
-This delay prevents normal button presses from becoming accidental bursts.
-
-A quick tap still behaves like a normal single press.
-
----
-
-## REPEAT EVERY
-
-Controls how frequently another press is generated once autofire has started.
-
-Available settings:
-
-* 50 ms
-* 100 ms
-* 150 ms
-* 200 ms
-* 300 ms
-* 400 ms
-* 500 ms
-
-Default:
-
-**200 ms**
-
-Lower values are faster.
-
-For example:
-
-* **50 ms** — very fast
-* **100 ms** — fast
-* **200 ms** — comfortable default
-* **500 ms** — slow repeat
-
----
-
-## DIRECTIONAL KEYS
-
-Controls autofire for:
-
-* UP
-* DOWN
-* LEFT
-* RIGHT
-
-Available settings:
-
-* **OFF**
-* **ON**
-
-Default:
-
-**OFF**
-
-Directional autofire is mainly intended for navigating menus such as the:
-
-* Pokédex
-* Bag
-* PC
-* Naming screen
-* Other cursor-based interfaces
-
-It does **not** increase normal walking speed.
-
-Gen1Recomp already treats a held direction as continuous movement in the overworld, while many menus instead react to individual button presses.
-
----
-
-## AUTOFIRE IN
-
-Controls where autofire is allowed.
-
-Available settings:
-
-### EVERYWHERE
-
-Autofire works both in battles and outside battles.
-
-This is the default setting.
-
-### BATTLE ONLY
-
-Autofire only works during battles.
-
-This is useful if you want rapid battle inputs while keeping overworld interaction completely manual.
-
-### WORLD ONLY
-
-Autofire works outside battles but is disabled during battles.
-
-This is useful for quickly advancing dialogue and navigating menus while preventing a held button from accidentally selecting moves or actions during battle.
-
----
-
-# How Autofire Behaves
-
-Autofire does **not** immediately spam a button when you press it.
-
-For example, with the default settings:
-
-**HOLD BEFORE REPEAT: 250 ms**
-**REPEAT EVERY: 200 ms**
-
-A normal quick press of A produces:
-
-`A`
-
-If A remains held past the initial delay, the mod begins generating additional A presses at the selected repeat interval.
-
-Releasing the button immediately stops the repeat cycle.
-
----
-
-# Independent Button Timing
-
-Each button has its own hold timer.
-
-For example:
-
-1. Hold **A**
-2. Autofire begins
-3. While still holding A, press and hold **B**
-
-B does **not** inherit A's existing timer.
-
-Instead, B receives its own full **HOLD BEFORE REPEAT** delay before it begins repeating.
-
-The same behavior applies to enabled directional buttons.
-
----
-
-# Battle and World Safety
-
-Repeated inputs can sometimes have unintended consequences depending on where they are used.
-
-For example, holding A in the overworld could potentially:
-
-1. Talk to an NPC
-2. Advance their dialogue
-3. Reach a YES/NO prompt
-4. Automatically confirm an option
-
-Likewise, repeated B presses may repeatedly cancel through menus.
-
-For this reason, the mod provides **BATTLE ONLY** and **WORLD ONLY** modes so the player can decide where autofire is appropriate.
-
-If a battle begins while **WORLD ONLY** autofire is active, autofire stops immediately for the duration of the battle.
-
----
-
-# Menu Compatibility
-
-Some Gen1Recomp menus already implement their own hold-to-scroll behavior.
-
-Running both systems simultaneously could cause the cursor to move twice as fast or skip entries.
-
-Autofire AB detects screens that already use Gen1Recomp's `keyRepeat` behavior and automatically disables **directional autofire** on those screens.
-
-A and B autofire remain unaffected.
-
-This also improves compatibility with mods such as **Pokédex Plus**, which use their own directional repeat behavior in several menus.
-
----
-
-# Soft Reset Safety
-
-Pokémon Red/Blue uses:
-
-**A + B + SELECT + START**
-
-for a soft reset.
-
-Autofire AB does not fake buttons as physically held.
-
-It only generates additional individual button presses.
-
-Because of this:
-
-* Autofire cannot trigger a soft reset by itself.
-* Holding only A and B with autofire active will not reset the game.
-* Physically holding **A+B+SELECT+START** still performs the normal soft reset.
-
----
-
-# Timing and Gen1Recomp
-
-Gen1Recomp game logic runs at a fixed **60 Hz**.
-
-One logic step is approximately:
-
-**16.67 ms**
-
-Autofire timings therefore use values that map cleanly to whole game logic steps.
-
-For example:
-
-| Setting | Logic Steps |
-| ------- | ----------: |
-| 50 ms   |           3 |
-| 100 ms  |           6 |
-| 150 ms  |           9 |
-| 200 ms  |          12 |
-| 250 ms  |          15 |
-| 300 ms  |          18 |
-| 400 ms  |          24 |
-| 500 ms  |          30 |
-
-This keeps repeat behavior consistent and predictable.
-
----
-
-# Technical Details
-
-Autofire AB operates through Gen1Recomp's `input.step` hook.
-
-While a selected button remains physically held, the mod tracks:
-
-* how long it has been held
-* how long it has been since the previous generated press
-
-Once the configured delay has passed, additional press events are inserted at the configured interval.
-
-The mod does not directly overwrite the physical held-button state.
-
-This helps preserve normal input behavior and compatibility with systems that need to distinguish between a button being **held** and a button being **pressed**.
-
----
-
-# Default Configuration
-
-```text
-AUTOFIRE BUTTONS    A AND B
-HOLD BEFORE REPEAT  250 MS
-REPEAT EVERY        200 MS
-DIRECTIONAL KEYS    OFF
-AUTOFIRE IN         EVERYWHERE
 ```
-
-This configuration is intended to provide a comfortable autofire speed without turning normal short button presses into bursts.
-
----
-
-# Compatibility
-
-Designed for **Gen1Recomp**.
-
-Gen1Recomp:
-
-https://github.com/bryanthaboi/gen1recomp
-
-The mod is designed to coexist with other mods where possible and specifically avoids adding directional repeat on screens that already implement their own hold-to-scroll behavior.
-
-As with any input-related mod, unusual UI replacement mods may implement input differently and could require additional compatibility handling.
-
----
-
-# Version
-
-**1.3.0**
-
-### Highlights
-
-* A and B autofire
-* Configurable hold delay
-* Configurable repeat rate
-* Battle / world scope selection
-* Optional D-Pad autofire
-* Protection against duplicate directional scrolling
-* Soft reset-safe input handling
+lua tests/autofire_test.lua
+```

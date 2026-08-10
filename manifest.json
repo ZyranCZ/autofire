@@ -1,0 +1,17 @@
+{
+  "id": "a_autofire",
+  "name": "Autofire AB",
+  "version": "1.3.1",
+  "github": "ZyranCZ/autofire",
+  "api": 2,
+  "entry": "main.lua",
+  "profile": "content",
+  "category": "TOOL",
+  "game_version": ">=0.0.0-0 <2.0.0",
+  "priority": 100,
+  "affects_link": false,
+  "dependencies": [],
+  "optional_dependencies": [],
+  "conflicts": [],
+  "description": "Holding A, B or a direction repeats the press automatically. Pick which face buttons autofire, turn the d-pad on separately, restrict it to battles or the overworld, and set one shared repeat rate and hold delay."
+}
