@@ -1,0 +1,41 @@
+name: Update ZyranCZ Gen1Recomp mod index
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/build-zyrancz-mod-index.mjs'
+      - '.github/workflows/update-zyrancz-mod-index.yml'
+  schedule:
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-index:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build index
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node scripts/build-zyrancz-mod-index.mjs
+
+      - name: Commit refreshed index
+        run: |
+          if git diff --quiet -- site/data/index.json; then
+            echo "Index is already current."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add site/data/index.json
+          git commit -m "Refresh ZyranCZ Gen1Recomp mod index"
+          git push
