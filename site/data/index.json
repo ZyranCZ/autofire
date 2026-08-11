@@ -1,0 +1,359 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-11T23:26:00Z",
+  "count": 12,
+  "categories": [
+    "GAMEPLAY",
+    "OTHER",
+    "QOL",
+    "TOOL",
+    "UI"
+  ],
+  "mods": [
+    {
+      "folder": "ZyranCZ@always_escape",
+      "id": "always_escape",
+      "title": "Always Escape",
+      "author": "ZyranCZ",
+      "version": "1.0.1",
+      "summary": "RUN always works against a wild Pokemon, with no failed roll and no lost turn. Trainer and link battles are untouched.",
+      "categories": ["QOL"],
+      "tags": ["Gen1Recomp", "Pokemon"],
+      "repo": "https://github.com/ZyranCZ/Can-Always-Escape",
+      "github": "ZyranCZ/Can-Always-Escape",
+      "api": 2,
+      "game_version": ">=0.0.0-0 <2.0.0",
+      "profile": "content",
+      "affects_link": false,
+      "experimental": false,
+      "permissions": [],
+      "dependencies": [],
+      "conflicts": [],
+      "latest": {
+        "version": "1.0.1",
+        "tag": "1.0.1",
+        "zip": {
+          "name": "always_escape_v1_0_1.zip",
+          "url": "https://github.com/ZyranCZ/Can-Always-Escape/releases/download/1.0.1/always_escape_v1_0_1.zip"
+        }
+      },
+      "update_check": "ok"
+    },
+    {
+      "folder": "ZyranCZ@a_autofire",
+      "id": "a_autofire",
+      "title": "Autofire AB",
+      "author": "ZyranCZ",
+      "version": "1.3.1",
+      "summary": "Holding A, B or a direction repeats the press automatically. Pick which face buttons autofire, turn the d-pad on separately, restrict it to battles or the overworld, and set one shared repeat rate and hold delay.",
+      "categories": ["TOOL"],
+      "tags": ["Gen1Recomp", "Pokemon"],
+      "repo": "https://github.com/ZyranCZ/autofire",
+      "github": "ZyranCZ/autofire",
+      "api": 2,
+      "game_version": ">=0.0.0-0 <2.0.0",
+      "profile": "content",
+      "affects_link": false,
+      "experimental": false,
+      "permissions": [],
+      "dependencies": [],
+      "conflicts": [],
+      "latest": {
+        "version": "1.3.1",
+        "tag": "1.3.1",
+        "zip": {
+          "name": "autofire_ab_v1_3_1_directional.zip",
+          "url": "https://github.com/ZyranCZ/autofire/releases/download/1.3.1/autofire_ab_v1_3_1_directional.zip"
+        }
+      },
+      "update_check": "ok"
+    },
+    {
+      "folder": "ZyranCZ@b_to_escape_encounters",
+      "id": "b_to_escape_encounters",
+      "title": "B to Escape Encounters",
+      "author": "ZyranCZ",
+      "version": "1.0.5",
+      "summary": "Hold B to avoid random/passive Wilds encounters, or press B during a random battle transition / aggressive Wilds alert to cancel it.",
+      "categories": ["GAMEPLAY"],
+      "tags": ["Gen1Recomp", "Pokemon"],
+      "repo": "https://github.com/ZyranCZ/Press-B-to-Escape-Wild-Encounters",
+      "github": "ZyranCZ/Press-B-to-Escape-Wild-Encounters",
+      "api": 2,
+      "profile": "overhaul",
+      "affects_link": true,
+      "experimental": false,
+      "permissions": ["engine_internals"],
+      "dependencies": [],
+      "conflicts": [],
+      "latest": {
+        "version": "1.0.5",
+        "tag": "1.0.5",
+        "zip": {
+          "name": "b_to_escape_encounters-1.0.5.zip",
+          "url": "https://github.com/ZyranCZ/Press-B-to-Escape-Wild-Encounters/releases/download/1.0.5/b_to_escape_encounters-1.0.5.zip"
+        }
+      },
+      "update_check": "ok"
+    },
+    {
+      "folder": "ZyranCZ@enemy_hp",
+      "id": "enemy_hp",
+      "title": "Enemy HP Readout",
+      "author": "ZyranCZ",
+      "version": "1.0.2",
+      "summary": "Adds a numeric or percentage enemy HP readout to the battle HUD.",
+      "categories": ["UI"],
+      "tags": ["Gen1Recomp", "Pokemon"],
+      "repo": "https://github.com/ZyranCZ/Enemy-HP",
+      "github": "ZyranCZ/Enemy-HP",
+      "api": 2,
+      "game_version": ">=0.0.0-0 <2.0.0",
+      "profile": "content",
+      "affects_link": false,
+      "experimental": false,
+      "permissions": ["engine_internals"],
+      "dependencies": [],
+      "conflicts": [],
+      "latest": {
+        "version": "1.0.2",
+        "tag": "1.0.2",
+        "zip": {
+          "name": "enemy_hp_v1.0.2.zip",
+          "url": "https://github.com/ZyranCZ/Enemy-HP/releases/download/1.0.2/enemy_hp_v1.0.2.zip"
+        }
+      },
+      "update_check": "ok"
+    },
+    {
+      "folder": "ZyranCZ@evolve_in_battle",
+      "id": "evolve_in_battle",
+      "title": "Evolve in Battle",
+      "author": "ZyranCZ",
+      "version": "1.0.3",
+      "summary": "Allows active and benched party Pokemon to evolve during battle from EXP level-ups, Evolution Stones, and Rare Candy, with EXP Share Modes compatibility.",
+      "categories": ["GAMEPLAY"],
+      "tags": ["Gen1Recomp", "Pokemon"],
+      "repo": "https://github.com/ZyranCZ/Evolve-in-Battle",
+      "github": "ZyranCZ/Evolve-in-Battle",
+      "api": 2,
+      "game_version": "0.1.75",
+      "profile": "overhaul",
+      "affects_link": true,
+      "experimental": false,
+      "permissions": ["engine_internals"],
+      "dependencies": [],
+      "conflicts": [],
+      "latest": {
+        "version": "1.0.3",
+        "tag": "1.0.3",
+        "zip": {
+          "name": "evolve_in_battle-v1.0.3.zip",
+          "url": "https://github.com/ZyranCZ/Evolve-in-Battle/releases/download/1.0.3/evolve_in_battle-v1.0.3.zip"
+        }
+      },
+      "update_check": "ok"
+    },
+    {
+      "folder": "ZyranCZ@help_story_guide",
+      "id": "help_story_guide",
+      "title": "HELP - Story Guide",
+      "author": "ZyranCZ",
+      "version": "1.0.5",
+      "summary": "Context-aware Red/Blue story guidance with multi-objective HELP pages, existing-save trainer reconstruction, purpose-aware PC prompts, HM Anywhere compatibility, route trainer progress, and optional SELECT HELP.",
+      "categories": ["OTHER"],
+      "tags": ["Gen1Recomp", "Pokemon"],
+      "repo": "https://github.com/ZyranCZ/HELP-Story-Guide",
+      "github": "ZyranCZ/HELP-Story-Guide",
+      "api": 2,
+      "game_version": "0.1.75",
+      "profile": "content",
+      "affects_link": false,
+      "experimental": false,
+      "permissions": [],
+      "dependencies": [],
+      "conflicts": [],
+      "latest": {
+        "version": "1.0.5",
+        "tag": "1.0.5",
+        "zip": {
+          "name": "help_story_guide_v1.0.5.zip",
+          "url": "https://github.com/ZyranCZ/HELP-Story-Guide/releases/download/1.0.5/help_story_guide_v1.0.5.zip"
+        }
+      },
+      "update_check": "ok"
+    },
+    {
+      "folder": "ZyranCZ@move_category",
+      "id": "move_category",
+      "title": "Move Category Readout",
+      "author": "ZyranCZ",
+      "version": "1.0.1",
+      "summary": "Replaces the TYPE/ label in the battle move box with the move's category, so it reads PHYS/FIRE or SPEC/PSYCHIC. Status moves keep TYPE/.",
+      "categories": ["UI"],
+      "tags": ["Gen1Recomp", "Pokemon"],
+      "repo": "https://github.com/ZyranCZ/Move-Category-Preview",
+      "github": "ZyranCZ/Move-Category-Preview",
+      "api": 2,
+      "game_version": ">=0.0.0-0 <2.0.0",
+      "profile": "content",
+      "affects_link": false,
+      "experimental": false,
+      "permissions": ["engine_internals"],
+      "dependencies": [],
+      "conflicts": [],
+      "latest": {
+        "version": "1.0.1",
+        "tag": "1.0.1",
+        "zip": {
+          "name": "move_category_v1_0_1.zip",
+          "url": "https://github.com/ZyranCZ/Move-Category-Preview/releases/download/1.0.1/move_category_v1_0_1.zip"
+        }
+      },
+      "update_check": "ok"
+    },
+    {
+      "folder": "ZyranCZ@oak_pokemon_appraisal",
+      "id": "oak_pokemon_appraisal",
+      "title": "Professor Oak's Pokemon Appraisal",
+      "author": "ZyranCZ",
+      "version": "1.0.2",
+      "summary": "Adds Gen I DV and Stat Experience appraisal to Professor Oak's PC and Oak himself in the lab.",
+      "categories": ["TOOL"],
+      "tags": ["Gen1Recomp", "Pokemon"],
+      "repo": "https://github.com/ZyranCZ/Professor-Oak-DV-STAT-Evaluation",
+      "github": "ZyranCZ/Professor-Oak-DV-STAT-Evaluation",
+      "api": 2,
+      "game_version": ">=0.1.75 <0.1.76",
+      "profile": "content",
+      "affects_link": false,
+      "experimental": false,
+      "permissions": [],
+      "dependencies": [],
+      "conflicts": [],
+      "latest": {
+        "version": "1.0.2",
+        "tag": "1.0.2",
+        "zip": {
+          "name": "oak_pokemon_appraisal_v1.0.2.zip",
+          "url": "https://github.com/ZyranCZ/Professor-Oak-DV-STAT-Evaluation/releases/download/1.0.2/oak_pokemon_appraisal_v1.0.2.zip"
+        }
+      },
+      "update_check": "ok"
+    },
+    {
+      "folder": "ZyranCZ@special_stat_split",
+      "id": "special_stat_split",
+      "title": "Special Stat Split",
+      "author": "ZyranCZ",
+      "version": "2.5.2",
+      "summary": "Generation II Special Attack / Special Defense, optional Generation IV+ per-move Physical/Special split, integrated Move Category readout, versioned inter-mod API, link-safe gameplay-option fingerprinting, capability-checked Modern UI compatibility, and optional CRYSTAL 251 interoperability.",
+      "categories": ["GAMEPLAY"],
+      "tags": ["Gen1Recomp", "Pokemon"],
+      "repo": "https://github.com/ZyranCZ/Special-Stat-Split",
+      "github": "ZyranCZ/Special-Stat-Split",
+      "api": 2,
+      "game_version": ">=0.1.75 <0.1.76",
+      "profile": "content",
+      "affects_link": true,
+      "experimental": false,
+      "permissions": ["engine_internals"],
+      "dependencies": [],
+      "conflicts": [],
+      "latest": {
+        "version": "2.5.2",
+        "tag": "2.5.2",
+        "zip": {
+          "name": "special_stat_split_v2.5.2.zip",
+          "url": "https://github.com/ZyranCZ/Special-Stat-Split/releases/download/2.5.2/special_stat_split_v2.5.2.zip"
+        }
+      },
+      "update_check": "ok"
+    },
+    {
+      "folder": "ZyranCZ@steel_typing",
+      "id": "steel_typing",
+      "title": "STEEL/FAIRY AND TYPING CHARTS",
+      "author": "ZyranCZ",
+      "version": "1.2.2",
+      "summary": "Preset and custom type-chart controls with standalone Dark, Steel/Fairy modernization, strict OFF semantics, and Crystal 251 compatibility.",
+      "categories": ["GAMEPLAY"],
+      "tags": ["Gen1Recomp", "Pokemon"],
+      "repo": "https://github.com/ZyranCZ/Fairy-Steel-Dark-and-Typing-Charts",
+      "github": "ZyranCZ/Fairy-Steel-Dark-and-Typing-Charts",
+      "api": 2,
+      "game_version": "0.0.0-dev || >=0.1.0 <2.0.0",
+      "profile": "content",
+      "affects_link": true,
+      "experimental": false,
+      "permissions": ["engine_internals"],
+      "dependencies": [],
+      "conflicts": [],
+      "latest": {
+        "version": "1.2.2",
+        "tag": "1.2.2",
+        "zip": {
+          "name": "steel_fairy_and_typing_charts_v1.2.2_CRYSTAL_251_compat.zip",
+          "url": "https://github.com/ZyranCZ/Fairy-Steel-Dark-and-Typing-Charts/releases/download/1.2.2/steel_fairy_and_typing_charts_v1.2.2_CRYSTAL_251_compat.zip"
+        }
+      },
+      "update_check": "ok"
+    },
+    {
+      "folder": "ZyranCZ@tap_to_move",
+      "id": "tap_to_move",
+      "title": "Tap to Move",
+      "author": "ZyranCZ",
+      "version": "1.5.7",
+      "summary": "Mobile-first pathfinding plus optional renderer-agnostic Simple Touch Movement, smart exits and controls-free touch/motion shortcuts.",
+      "categories": ["GAMEPLAY"],
+      "tags": ["Gen1Recomp", "Pokemon", "Mobile"],
+      "repo": "https://github.com/ZyranCZ/Tap-to-Move",
+      "github": "ZyranCZ/Tap-to-Move",
+      "api": 2,
+      "affects_link": false,
+      "experimental": false,
+      "permissions": ["engine_internals"],
+      "dependencies": [],
+      "conflicts": [],
+      "latest": {
+        "version": "1.5.7",
+        "tag": "1.5.7",
+        "zip": {
+          "name": "tap_to_move_v1.5.7.zip",
+          "url": "https://github.com/ZyranCZ/Tap-to-Move/releases/download/1.5.7/tap_to_move_v1.5.7.zip"
+        }
+      },
+      "update_check": "ok"
+    },
+    {
+      "folder": "ZyranCZ@choose_lead",
+      "id": "choose_lead",
+      "title": "Trainers Let You Choose Lead Pokemon",
+      "author": "ZyranCZ",
+      "version": "1.0.1",
+      "summary": "Asks which Pokemon to send out once the opposing one is on screen, instead of always leading with party slot 1.",
+      "categories": ["QOL"],
+      "tags": ["Gen1Recomp", "Pokemon"],
+      "repo": "https://github.com/ZyranCZ/Trainers-Let-You-Choose-Lead-Pokemon",
+      "github": "ZyranCZ/Trainers-Let-You-Choose-Lead-Pokemon",
+      "api": 2,
+      "game_version": ">=0.0.0-0 <2.0.0",
+      "profile": "content",
+      "affects_link": false,
+      "experimental": false,
+      "permissions": ["engine_internals"],
+      "dependencies": [],
+      "conflicts": [],
+      "latest": {
+        "version": "1.0.1",
+        "tag": "1.0.1",
+        "zip": {
+          "name": "choose_lead_v1_0_1.zip",
+          "url": "https://github.com/ZyranCZ/Trainers-Let-You-Choose-Lead-Pokemon/releases/download/1.0.1/choose_lead_v1_0_1.zip"
+        }
+      },
+      "update_check": "ok"
+    }
+  ]
+}
