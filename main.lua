@@ -81,6 +81,12 @@ local SCOPE_CHOICES = {
   { "WORLD ONLY", "world" },
 }
 
+-- Keys owned by this mod's option schema.  Kept in one list for the Gold
+-- persistence compatibility bridge below so no unrelated mod option is ever
+-- copied or written.
+local OPTION_KEYS = { "buttons", "delay", "rate", "dpad", "scope" }
+local GOLD_PERSIST_MARKER = "__a_autofire_gold_persist_v1"
+
 return function(mod)
   mod.options:define({
     { key = "buttons", label = "AUTOFIRE BUTTONS", type = "choice",
@@ -109,6 +115,7 @@ return function(mod)
   -- cached rather than read per step: options:get walks the schema on a
   -- miss, and this runs 60 times a second for every tracked button
   local active, delaySteps, rateSteps, scope
+  local liveGame = nil
 
   local function readOptions()
     local faces = BUTTON_SETS[mod.options:get("buttons")] or BUTTON_SETS.off
@@ -122,9 +129,93 @@ return function(mod)
     scope = mod.options:get("scope") or "all"
   end
 
+  -- Gen1Recomp v0.1.75 currently has two option persistence shapes:
+  -- Loader.modOptions is loaded from the shared root options.modOptions, while
+  -- Game2/save.options points at the Gold-specific options.gold block.  The
+  -- generic MODS manager updates both live tables, but its persistence helper
+  -- calls game:writeOptions(); Game2 exposes persistOptions() instead.  The
+  -- result is a Gold-only failure mode where settings work for the session and
+  -- come back as defaults on the next boot.
+  --
+  -- Keep this bridge capability-based rather than version-gated.  On a Gold
+  -- build where the manager still has that split, save the Gold block after
+  -- our option changes and restore only OUR five keys into the loader on the
+  -- next game.ready.  On Gen 1 (and on a future engine that supplies the normal
+  -- writeOptions path) this collapses to the ordinary persistence route.
+  local function gameOptions(game)
+    if not game then return nil end
+    if type(game.options) == "table" then return game.options end
+    local save = game.save
+    return save and type(save.options) == "table" and save.options or nil
+  end
+
+  local function persistChangedOptions(game)
+    if not game then return end
+    local hasWriteOptions = type(game.writeOptions) == "function"
+    local hasGoldWriter = type(game.persistOptions) == "function"
+
+    -- Gen 1 already has the normal writeOptions path.  Only the Gold-style
+    -- capability split needs a compatibility marker/bucket of its own.
+    if not hasWriteOptions and hasGoldWriter then
+      local options = gameOptions(game)
+      if options then
+        options.modOptions = options.modOptions or {}
+        local bucket = options.modOptions[mod.id]
+        if type(bucket) ~= "table" then
+          bucket = {}
+          options.modOptions[mod.id] = bucket
+        end
+        -- The manager has already written the changed value into this bucket
+        -- before it emits mod.options_changed.  The marker distinguishes a
+        -- Gold block intentionally persisted by this compatibility shim from a
+        -- coincidental/stale table, so launcher/root options remain authoritative
+        -- until the player actually changes Autofire in-game on Gold.
+        bucket[GOLD_PERSIST_MARKER] = true
+      end
+    end
+
+    if hasWriteOptions then
+      pcall(game.writeOptions, game)
+    elseif hasGoldWriter then
+      pcall(game.persistOptions, game)
+    end
+  end
+
+  local function restoreGoldOptions(game)
+    local options = gameOptions(game)
+    local all = options and options.modOptions
+    local saved = all and all[mod.id]
+    if type(saved) ~= "table" or not saved[GOLD_PERSIST_MARKER] then
+      return false
+    end
+
+    -- mod.options:get is backed by loader.modOptions.  Game2 intentionally
+    -- keeps its Gold options block separate, so mirror only this mod's known
+    -- keys back into that live backing table once the loader exists.
+    local loader = game and game.mods
+    if not loader then return false end
+    loader.modOptions = loader.modOptions or {}
+    local target = loader.modOptions[mod.id]
+    if type(target) ~= "table" then
+      target = {}
+      loader.modOptions[mod.id] = target
+    end
+    for _, key in ipairs(OPTION_KEYS) do
+      if saved[key] ~= nil then target[key] = saved[key] end
+    end
+    return true
+  end
+
   readOptions()
+  mod.events:on("game.ready", function(payload)
+    liveGame = (payload and payload.game) or mod.game
+    if restoreGoldOptions(liveGame) then readOptions() end
+  end)
   mod.events:on("mod.options_changed", function(payload)
-    if payload and payload.mod == "a_autofire" then readOptions() end
+    if payload and payload.mod == mod.id then
+      readOptions()
+      persistChangedOptions(liveGame or mod.game)
+    end
   end)
 
   -- battle.started / battle.ended bracket every battle, so scope can be

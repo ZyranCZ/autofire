@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.0.1]
+
+### Fixed
+
+- Autofire settings now persist across game restarts on Pokémon Gold / Gen 2.
+- Added a narrow compatibility bridge for the current Gold options split: in-game MODS changes are persisted through Game2's option writer and restored into the live mod-option backing store on the next boot.
+- The bridge is capability-based rather than engine-version-gated and touches only Autofire AB's own five option keys.
+
 ## [2.0.0]
 
 ### Added

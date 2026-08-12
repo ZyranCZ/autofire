@@ -12,7 +12,7 @@ menus can be advanced without mashing.
 ## Game compatibility
 
 - **Pokémon Red / Blue / Yellow:** supported. The established v1.3.1 behavior is preserved.
-- **Pokémon Gold / Gen 2:** supported as of v2.0.0. A and B autofire were verified in a live Gold runtime using the same shared autofire core.
+- **Pokémon Gold / Gen 2:** supported as of v2.0.0. A and B autofire were verified in a live Gold runtime using the same shared autofire core. v2.0.1 fixes persistence of the mod settings across Gold restarts.
 
 The mod declares both `gen1` and `gen2` support in `manifest.json`. There is no engine-version allow-list: a newer Gen1Recomp version will not be rejected merely because its version number changed. If the shared Mod API actually breaks in a future engine build, that should be handled as a compatibility bug rather than a version-number gate.
 
