@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-12T13:51:31.678Z",
+  "generated_at": "2026-08-12T19:30:08.492Z",
   "count": 12,
   "categories": [
     "GAMEPLAY",
@@ -52,7 +52,7 @@
       "id": "a_autofire",
       "title": "Autofire AB",
       "author": "ZyranCZ",
-      "version": "2.0.0",
+      "version": "2.0.1",
       "summary": "Holding A, B or a direction repeats the press automatically. Pick which face buttons autofire, turn the d-pad on separately, restrict it to battles or the overworld, and set one shared repeat rate and hold delay.",
       "categories": [
         "TOOL"
@@ -71,15 +71,15 @@
       "dependencies": [],
       "conflicts": [],
       "latest": {
-        "version": "2.0.0",
-        "tag": "2.0.0",
-        "name": "2.0.0 GEN 2 Ready",
+        "version": "2.0.1",
+        "tag": "2.0.1",
+        "name": "2.0.1 Fixes Options Saving Issues",
         "prerelease": false,
-        "published_at": "2026-08-12T01:32:18Z",
+        "published_at": "2026-08-12T16:50:44Z",
         "zip": {
-          "name": "autofire_ab_v2.0.0.zip",
-          "url": "https://github.com/ZyranCZ/autofire/releases/download/2.0.0/autofire_ab_v2.0.0.zip",
-          "size": 8005
+          "name": "autofire_ab_v2.0.1.zip",
+          "url": "https://github.com/ZyranCZ/autofire/releases/download/2.0.1/autofire_ab_v2.0.1.zip",
+          "size": 9468
         }
       },
       "update_check": "ok"
@@ -320,7 +320,7 @@
       "id": "special_stat_split",
       "title": "Special Stat Split",
       "author": "ZyranCZ",
-      "version": "2.6.4",
+      "version": "2.6.5",
       "summary": "Generation II Special Attack / Special Defense, optional Generation IV+ per-move Physical/Special split, integrated Move Category readout, automatic Gen 1 + Gold Gen 3 UI inline category compatibility, versioned inter-mod API, link-safe gameplay-option fingerprinting, capability-checked Modern UI compatibility, and optional CRYSTAL 251 interoperability.",
       "categories": [
         "GAMEPLAY"
@@ -341,15 +341,15 @@
       "dependencies": [],
       "conflicts": [],
       "latest": {
-        "version": "2.6.4",
-        "tag": "2.6.4",
-        "name": "2.6.4 GEN Ready + GEN3UI Compatibility",
+        "version": "2.6.5",
+        "tag": "2.6.5",
+        "name": "2.6.5 Gen1+Gen2 + GEN3UI Compatible",
         "prerelease": false,
-        "published_at": "2026-08-12T06:24:02Z",
+        "published_at": "2026-08-12T17:02:53Z",
         "zip": {
-          "name": "special_stat_split_v2.6.4.zip",
-          "url": "https://github.com/ZyranCZ/Special-Stat-Split/releases/download/2.6.4/special_stat_split_v2.6.4.zip",
-          "size": 180273
+          "name": "special_stat_split_v2.6.5.zip",
+          "url": "https://github.com/ZyranCZ/Special-Stat-Split/releases/download/2.6.5/special_stat_split_v2.6.5.zip",
+          "size": 178776
         }
       },
       "update_check": "ok"
