@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.0.0]
+
+### Added
+
+- Official Pokémon Gold / Gen 2 support.
+- The manifest now declares both `gen1` and `gen2`, while retaining the legacy `gen2compat` marker for compatibility with Gen1Recomp builds that still read it.
+
+### Changed
+
+- Removed the engine-version compatibility gate. The mod relies on the shared Mod API contract instead of rejecting newer engine versions by number alone.
+- Promoted the Gold validation build to the stable 2.x release line after live verification of A and B autofire on Pokémon Gold.
+
+### Tests
+
+- Expanded the regression suite with characterization coverage for battle transitions while held, scope and D-pad changes while held, same-tick external press-edge composition, and `Input:reset()` recovery.
+- Preserved the v1.3.1 gameplay implementation in `main.lua`; the Gen 2 release uses the same shared autofire core rather than a separate Gold-specific backend.
+
 ## [1.3.1]
 
 - Added native Gen1Recomp GitHub release update metadata.
