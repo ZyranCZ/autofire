@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-13T03:02:54.289Z",
+  "generated_at": "2026-08-13T07:57:13.128Z",
   "count": 12,
   "categories": [
     "GAMEPLAY",
@@ -128,7 +128,7 @@
       "id": "enemy_hp",
       "title": "Enemy HP Readout",
       "author": "ZyranCZ",
-      "version": "2.2.2",
+      "version": "2.2.3",
       "summary": "Shows enemy HP as exact values or percentages in Gen 1 and Gen 2/Gold, with compatibility fixes for Original/Vanilla UI, Gen 3 Inspired UI, and Gen1 Modern UI. Includes an optional complete original battle UI hide mode for replacement UIs.",
       "categories": [
         "UI"
@@ -149,15 +149,15 @@
       "dependencies": [],
       "conflicts": [],
       "latest": {
-        "version": "2.2.2",
-        "tag": "2.2.2",
-        "name": "2.2.2 GEN2 Ready + GEN3UI's Both Versions Compatible Latest",
+        "version": "2.2.3",
+        "tag": "2.2.3",
+        "name": "2.2.3 Fixed nonGEN3UI's Visibility",
         "prerelease": false,
-        "published_at": "2026-08-12T06:50:11Z",
+        "published_at": "2026-08-13T04:16:04Z",
         "zip": {
-          "name": "enemy_hp_v2.2.2.zip",
-          "url": "https://github.com/ZyranCZ/Enemy-HP/releases/download/2.2.2/enemy_hp_v2.2.2.zip",
-          "size": 22410
+          "name": "enemy_hp_v2.2.3.zip",
+          "url": "https://github.com/ZyranCZ/Enemy-HP/releases/download/2.2.3/enemy_hp_v2.2.3.zip",
+          "size": 24098
         }
       },
       "update_check": "ok"
