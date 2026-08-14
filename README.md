@@ -12,7 +12,7 @@ menus can be advanced without mashing.
 ## Game compatibility
 
 - **Pokémon Red / Blue / Yellow:** supported. The established v1.3.1 behavior is preserved.
-- **Pokémon Gold / Gen 2:** supported as of v2.0.0. A and B autofire were verified in a live Gold runtime using the same shared autofire core. v2.0.1 fixes persistence of the mod settings across Gold restarts.
+- **Pokémon Gold / Gen 2:** supported as of v2.0.0. A and B autofire use the same shared core as Gen 1. v2.0.1 fixed Gold option persistence; v2.0.2 migrates repeat injection to Gen1Recomp's public `mod.input` API used by the v0.1.86 target.
 
 The mod declares both `gen1` and `gen2` support in `manifest.json`. There is no engine-version allow-list: a newer Gen1Recomp version will not be rejected merely because its version number changed. If the shared Mod API actually breaks in a future engine build, that should be handled as a compatibility bug rather than a version-number gate.
 
@@ -65,24 +65,23 @@ without saying so.
 ## How it works
 
 The engine calls the `input.step` hook once per logic step, immediately before
-`Input:step` promotes queued presses into that step's edges — the seam it
-documents for autoplay and accessibility tools. While a button is held past the
-delay window, this mod pushes its name onto `input.pressQueue` on schedule, and
-the engine turns it into a press edge indistinguishable from a real one.
+`Input:step` promotes presses into that step's edges — the shared Gen 1 / Gen 2
+seam documented for autoplay and accessibility tools. Once a held button passes
+the delay window, Autofire emits the repeat through the public `mod.input:tap`
+API. The loader gives each mod its own input source, so an autofire edge cannot
+release or overwrite a physical key, touch input, controller input, or another
+mod's hold.
 
-It never writes `input.state`, so held-button bookkeeping stays owned by real
-input sources. That matters most in `A AND B` mode: the A+B+SELECT+START soft
-reset still counts only genuinely held buttons, so autofire can never trip it,
-and a real four-button chord still works.
+Autofire never writes held-state internals. That matters most in `A AND B` mode:
+the A+B+SELECT+START soft reset still counts genuinely held buttons, so a real
+four-button chord keeps working normally. A tiny read-only queue check remains
+only to preserve fast release+press re-arming before `Input:step`; if that
+internal queue is hidden by a future engine, Autofire simply loses that
+same-tick refinement rather than failing its repeat core.
 
 ## Tests
 
-`tests/autofire_test.lua` drives the mod against the engine's real
-`src/core/Input.lua` and a stand-in for the fixed-step call order. In addition
-to the original timing/scope cases, it locks transition behavior, live option
-changes, same-tick input composition and input-reset recovery. Run it from the
-game's root:
-
-```
-lua tests/autofire_test.lua
-```
+The source regression suite covers timing, independent A/B timers, scopes,
+directional repeat suppression, live option changes, same-tick press re-arming,
+Gold option persistence, and the public `mod.input` injection path. The
+user-facing release ZIP intentionally contains only the files needed by the mod.

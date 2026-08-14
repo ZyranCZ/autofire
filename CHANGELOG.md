@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.0.2]
+
+### Migrated
+
+- Migrated repeat injection for Gen1Recomp v0.1.86 from direct `input.pressQueue` writes to the public `mod.input:tap` API.
+- Kept the shared `input.step`, `battle.started`, and `battle.ended` Mod API seams used by both Gen 1 and Gold.
+- Removed the redundant legacy `gen2compat` manifest field; `games: ["gen1", "gen2"]` remains the authoritative game-target declaration.
+- Isolated the only remaining input-internal access to a defensive read-only queue check used to preserve same-tick fast release+press re-arming.
+
+### Preserved
+
+- Preserved all existing settings, defaults, A/B behavior, directional autofire, battle/world scopes, per-button timers, and the v2.0.1 Gold option-persistence bridge.
+- No engine-version allow-list or exact-version runtime gate was added.
+
 ## [2.0.1]
 
 ### Fixed

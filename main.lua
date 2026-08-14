@@ -25,12 +25,12 @@
 -- ("autoplay, accessibility drivers, input visualizers"), and it means an
 -- injected press is visible to the same tick a physical one would be.
 --
--- Injection is a push onto input.pressQueue.  Input:step turns every queued
--- name into a `pressed` edge; because a real key is still holding the
--- button, its source table is non-empty and the held state carries on
--- untouched.  We never write input.state ourselves, so the
--- A+B+SELECT+START soft reset (Input:softResetHeld) still counts only
--- genuinely held buttons -- including when autofire is driving both A and B.
+-- Repeat edges are emitted through the public mod.input API added for
+-- programmatic tool/accessibility input.  The loader assigns each mod its own
+-- input source, so an autofire tap cannot release or overwrite a physical key,
+-- the touch overlay, another controller, or another mod's hold.  We never
+-- write input.state ourselves, so the A+B+SELECT+START soft-reset chord still
+-- counts only genuinely held buttons.
 
 local FACE_BUTTONS = { "a", "b" }
 local DIRECTIONS = { "up", "down", "left", "right" }
@@ -88,6 +88,9 @@ local OPTION_KEYS = { "buttons", "delay", "rate", "dpad", "scope" }
 local GOLD_PERSIST_MARKER = "__a_autofire_gold_persist_v1"
 
 return function(mod)
+  assert(mod.input and type(mod.input.tap) == "function",
+    "Autofire AB requires the public mod.input API")
+
   mod.options:define({
     { key = "buttons", label = "AUTOFIRE BUTTONS", type = "choice",
       default = "ab", choices = BUTTON_CHOICES },
@@ -129,7 +132,7 @@ return function(mod)
     scope = mod.options:get("scope") or "all"
   end
 
-  -- Gen1Recomp v0.1.75 currently has two option persistence shapes:
+  -- Gen1Recomp v0.1.86 still has two option persistence shapes:
   -- Loader.modOptions is loaded from the shared root options.modOptions, while
   -- Game2/save.options points at the Gold-specific options.gold block.  The
   -- generic MODS manager updates both live tables, but its persistence helper
@@ -243,8 +246,9 @@ return function(mod)
   -- A and B are unaffected, since keyRepeat only drives the d-pad.
   local function stateRepeatsDirections(game)
     local stack = game and game.stack
-    local top = stack and stack.top and stack:top()
-    return top ~= nil and top.keyRepeat and true or false
+    if not stack or type(stack.top) ~= "function" then return false end
+    local top = stack:top()
+    return top ~= nil and top.keyRepeat == true
   end
 
   local function scopeAllows()
@@ -253,10 +257,17 @@ return function(mod)
     return true
   end
 
-  -- true when this button is already queued this step -- a real press
-  -- landed, or another tool mod injected one.  Never stack a second edge.
+  -- Read-only compatibility seam: input.step runs BEFORE Input:step, while a
+  -- brand-new physical press still lives in the input queue.  There is no
+  -- public pre-promotion edge query in v0.1.86, so peeking at this queue is the
+  -- narrowest way to preserve the established fast release+press re-arm
+  -- behavior.  Injection itself never mutates the queue directly; mod.input
+  -- owns that.  If a future Input implementation hides the queue, the mod
+  -- simply loses this same-tick refinement instead of failing.
   local function alreadyQueued(input, button)
-    for _, queued in ipairs(input.pressQueue or {}) do
+    local queue = input and input.pressQueue
+    if type(queue) ~= "table" then return false end
+    for _, queued in ipairs(queue) do
       if queued == button then return true end
     end
     return false
@@ -265,7 +276,7 @@ return function(mod)
   local DIRECTION = {}
   for _, dir in ipairs(DIRECTIONS) do DIRECTION[dir] = true end
 
-  local function stepButton(input, button, skipDirections)
+  local function stepButton(game, input, button, skipDirections)
     local t = track[button]
 
     if not input:isDown(button) then
@@ -306,7 +317,9 @@ return function(mod)
     t.since = t.since + 1
     if t.since >= rateSteps and not fresh then
       t.since = 0
-      input.pressQueue[#input.pressQueue + 1] = button
+      -- Public v0.1.86 programmatic-input surface.  tap() creates an edge
+      -- without stealing the physical source that is keeping the button held.
+      mod.input:tap(game, button)
     end
   end
 
@@ -318,7 +331,7 @@ return function(mod)
 
     local skipDirections = stateRepeatsDirections(game)
     for _, button in ipairs(TRACKED) do
-      stepButton(input, button, skipDirections)
+      stepButton(game, input, button, skipDirections)
     end
 
     return next()
