@@ -1,10 +1,9 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-14T13:47:37.497Z",
+  "generated_at": "2026-08-14T19:17:02.404Z",
   "count": 12,
   "categories": [
     "GAMEPLAY",
-    "OTHER",
     "QOL",
     "TOOL",
     "UI"
@@ -15,7 +14,7 @@
       "id": "always_escape",
       "title": "Always Escape",
       "author": "ZyranCZ",
-      "version": "2.0.0",
+      "version": "2.0.1",
       "summary": "When RUN is legally allowed in a wild battle, its random escape roll always succeeds. Trainer, link, trapping, and special no-escape rules stay unchanged.",
       "categories": [
         "QOL"
@@ -34,15 +33,15 @@
       "dependencies": [],
       "conflicts": [],
       "latest": {
-        "version": "2.0.0",
-        "tag": "2.0.0",
-        "name": "2.0.0 GEN 2 Ready",
+        "version": "2.0.1",
+        "tag": "2.0.1",
+        "name": "2.0.1 Ready for 0.1.86 Update",
         "prerelease": false,
-        "published_at": "2026-08-12T01:36:15Z",
+        "published_at": "2026-08-14T18:48:53Z",
         "zip": {
-          "name": "always_escape_v2_0_0.zip",
-          "url": "https://github.com/ZyranCZ/Can-Always-Escape/releases/download/2.0.0/always_escape_v2_0_0.zip",
-          "size": 7981
+          "name": "always_escape_v2.0.1.zip",
+          "url": "https://github.com/ZyranCZ/Can-Always-Escape/releases/download/2.0.1/always_escape_v2.0.1.zip",
+          "size": 4999
         }
       },
       "update_check": "ok"
@@ -52,7 +51,7 @@
       "id": "a_autofire",
       "title": "Autofire AB",
       "author": "ZyranCZ",
-      "version": "2.0.1",
+      "version": "2.0.2",
       "summary": "Holding A, B or a direction repeats the press automatically. Pick which face buttons autofire, turn the d-pad on separately, restrict it to battles or the overworld, and set one shared repeat rate and hold delay.",
       "categories": [
         "TOOL"
@@ -71,15 +70,15 @@
       "dependencies": [],
       "conflicts": [],
       "latest": {
-        "version": "2.0.1",
-        "tag": "2.0.1",
-        "name": "2.0.1 Fixes Options Saving Issues",
+        "version": "2.0.2",
+        "tag": "2.0.2",
+        "name": "2.0.2 Ready for 0.1.86 Update",
         "prerelease": false,
-        "published_at": "2026-08-12T16:50:44Z",
+        "published_at": "2026-08-14T18:25:40Z",
         "zip": {
-          "name": "autofire_ab_v2.0.1.zip",
-          "url": "https://github.com/ZyranCZ/autofire/releases/download/2.0.1/autofire_ab_v2.0.1.zip",
-          "size": 9468
+          "name": "autofire_ab_v2.0.2.zip",
+          "url": "https://github.com/ZyranCZ/autofire/releases/download/2.0.2/autofire_ab_v2.0.2.zip",
+          "size": 10211
         }
       },
       "update_check": "ok"
@@ -89,8 +88,8 @@
       "id": "b_to_escape_encounters",
       "title": "B to Escape Encounters",
       "author": "ZyranCZ",
-      "version": "2.0.0",
-      "summary": "Hold or press B to avoid eligible random encounters. Supports fresh-B transition cancellation on Gen 1 and Gold ordinary encounters while protecting special/scripted battles.",
+      "version": "2.0.1",
+      "summary": "Hold or press B to avoid eligible random encounters. Supports sandbox-safe fresh-B transition cancellation on Gen 1 and Gold while protecting special/scripted battles.",
       "categories": [
         "GAMEPLAY"
       ],
@@ -110,15 +109,15 @@
       "dependencies": [],
       "conflicts": [],
       "latest": {
-        "version": "2.0.0",
-        "tag": "2.0.0",
-        "name": "2.0.0 GEN 2 Ready",
+        "version": "2.0.1",
+        "tag": "2.0.1",
+        "name": "2.0.1 Ready for 0.1.86 Update",
         "prerelease": false,
-        "published_at": "2026-08-12T01:32:58Z",
+        "published_at": "2026-08-14T18:36:34Z",
         "zip": {
-          "name": "b_to_escape_encounters-2.0.0.zip",
-          "url": "https://github.com/ZyranCZ/Press-B-to-Escape-Wild-Encounters/releases/download/2.0.0/b_to_escape_encounters-2.0.0.zip",
-          "size": 60017
+          "name": "b_to_escape_encounters-2.0.1.zip",
+          "url": "https://github.com/ZyranCZ/Press-B-to-Escape-Wild-Encounters/releases/download/2.0.1/b_to_escape_encounters-2.0.1.zip",
+          "size": 30788
         }
       },
       "update_check": "ok"
@@ -167,7 +166,7 @@
       "id": "evolve_in_battle",
       "title": "Evolve in Battle",
       "author": "ZyranCZ",
-      "version": "2.0.2",
+      "version": "2.0.3",
       "summary": "Allows active and benched party Pokémon to evolve during battle from EXP level-ups, Evolution Stones, and Rare Candy, with EXP Share Modes compatibility.",
       "categories": [
         "GAMEPLAY"
@@ -188,15 +187,15 @@
       "dependencies": [],
       "conflicts": [],
       "latest": {
-        "version": "2.0.2",
-        "tag": "2.0.2",
-        "name": "2.0.2 GEN 2 Ready",
+        "version": "2.0.3",
+        "tag": "2.0.3",
+        "name": "2.0.3 Ready for 0.1.86 Update",
         "prerelease": false,
-        "published_at": "2026-08-12T02:30:00Z",
+        "published_at": "2026-08-14T18:58:35Z",
         "zip": {
-          "name": "evolve_in_battle-v2.0.2.zip",
-          "url": "https://github.com/ZyranCZ/Evolve-in-Battle/releases/download/2.0.2/evolve_in_battle-v2.0.2.zip",
-          "size": 25142
+          "name": "evolve_in_battle-v2.0.3.zip",
+          "url": "https://github.com/ZyranCZ/Evolve-in-Battle/releases/download/2.0.3/evolve_in_battle-v2.0.3.zip",
+          "size": 26097
         }
       },
       "update_check": "ok"
@@ -206,10 +205,10 @@
       "id": "help_story_guide",
       "title": "HELP - Story Guide",
       "author": "ZyranCZ",
-      "version": "2.0.0",
+      "version": "2.0.3",
       "summary": "Context-aware Gen 1 and Pokémon Gold story guidance with detailed map-by-map objectives, safe progress reconstruction, HM-aware routing, route trainer progress, and optional SELECT HELP.",
       "categories": [
-        "OTHER"
+        "UI"
       ],
       "tags": [
         "Gen1Recomp",
@@ -225,15 +224,15 @@
       "dependencies": [],
       "conflicts": [],
       "latest": {
-        "version": "2.0.0",
-        "tag": "2.0.0",
-        "name": "2.0.0 GEN 2 Ready",
+        "version": "2.0.3",
+        "tag": "2.0.3",
+        "name": "2.0.3 Ready for 0.1.86 Update",
         "prerelease": false,
-        "published_at": "2026-08-12T04:42:52Z",
+        "published_at": "2026-08-14T19:11:54Z",
         "zip": {
-          "name": "help_story_guide_v2.0.0.zip",
-          "url": "https://github.com/ZyranCZ/HELP-Story-Guide/releases/download/2.0.0/help_story_guide_v2.0.0.zip",
-          "size": 62920
+          "name": "help_story_guide_v2.0.3.zip",
+          "url": "https://github.com/ZyranCZ/HELP-Story-Guide/releases/download/2.0.3/help_story_guide_v2.0.3.zip",
+          "size": 63889
         }
       },
       "update_check": "ok"
@@ -283,7 +282,7 @@
       "id": "oak_pokemon_appraisal",
       "title": "Professor Oak's Pokemon Appraisal",
       "author": "ZyranCZ",
-      "version": "2.0.0",
+      "version": "2.0.1",
       "summary": "Adds party Pokemon DV and Stat Experience appraisal to Professor Oak in Gen I and to Oak's PC, Professor Elm, and Goldenrod's Happiness Rater in Pokemon Gold.",
       "categories": [
         "TOOL"
@@ -302,15 +301,15 @@
       "dependencies": [],
       "conflicts": [],
       "latest": {
-        "version": "2.0.0",
-        "tag": "2.0.0",
-        "name": "2.0.0 GEN 2 Ready",
+        "version": "2.0.1",
+        "tag": "2.0.1",
+        "name": "2.0.1 Ready for 0.1.86 Update",
         "prerelease": false,
-        "published_at": "2026-08-12T01:34:08Z",
+        "published_at": "2026-08-14T18:40:15Z",
         "zip": {
-          "name": "oak_pokemon_appraisal_v2.0.0.zip",
-          "url": "https://github.com/ZyranCZ/Professor-Oak-DV-STAT-Evaluation/releases/download/2.0.0/oak_pokemon_appraisal_v2.0.0.zip",
-          "size": 47230
+          "name": "oak_pokemon_appraisal_v2.0.1.zip",
+          "url": "https://github.com/ZyranCZ/Professor-Oak-DV-STAT-Evaluation/releases/download/2.0.1/oak_pokemon_appraisal_v2.0.1.zip",
+          "size": 33375
         }
       },
       "update_check": "ok"
@@ -359,7 +358,7 @@
       "id": "steel_typing",
       "title": "STEEL/FAIRY AND TYPING CHARTS",
       "author": "ZyranCZ",
-      "version": "2.0.0",
+      "version": "2.0.1",
       "summary": "ANY CHANGES REQUIRE SAVE AND RESTART. Preset and custom type-chart controls for Red/Blue/Yellow and Gold, with generation-aware native Steel/Dark preservation, optional Fairy modernization, strict OFF semantics, and Crystal 251 compatibility on Gen 1.",
       "categories": [
         "GAMEPLAY"
@@ -380,15 +379,15 @@
       "dependencies": [],
       "conflicts": [],
       "latest": {
-        "version": "2.0.0",
-        "tag": "2.0.0",
-        "name": "2.0.0 GEN 2 Ready",
+        "version": "2.0.1",
+        "tag": "2.0.1",
+        "name": "2.0.1 Ready for 0.1.86 Update",
         "prerelease": false,
-        "published_at": "2026-08-12T01:35:41Z",
+        "published_at": "2026-08-14T18:47:17Z",
         "zip": {
-          "name": "steel_fairy_and_typing_charts_v2.0.0.zip",
-          "url": "https://github.com/ZyranCZ/Fairy-Steel-Dark-and-Typing-Charts/releases/download/2.0.0/steel_fairy_and_typing_charts_v2.0.0.zip",
-          "size": 28187
+          "name": "steel_fairy_and_typing_charts_v2.0.1.zip",
+          "url": "https://github.com/ZyranCZ/Fairy-Steel-Dark-and-Typing-Charts/releases/download/2.0.1/steel_fairy_and_typing_charts_v2.0.1.zip",
+          "size": 17339
         }
       },
       "update_check": "ok"
@@ -398,7 +397,7 @@
       "id": "tap_to_move",
       "title": "Tap to Move",
       "author": "ZyranCZ",
-      "version": "2.0.0",
+      "version": "2.0.1",
       "summary": "Mobile-first pathfinding plus optional renderer-agnostic Simple Touch Movement, smart exits and controls-free touch/motion shortcuts.",
       "categories": [
         "GAMEPLAY"
@@ -410,6 +409,7 @@
       "repo": "https://github.com/ZyranCZ/Tap-to-Move",
       "github": "ZyranCZ/Tap-to-Move",
       "api": 2,
+      "profile": "content",
       "affects_link": false,
       "experimental": false,
       "permissions": [
@@ -418,15 +418,15 @@
       "dependencies": [],
       "conflicts": [],
       "latest": {
-        "version": "2.0.0",
-        "tag": "2.0.0",
-        "name": "2.0.0 GEN 2 Ready",
+        "version": "2.0.1",
+        "tag": "2.0.1",
+        "name": "2.0.1 Ready for 0.1.86 Update",
         "prerelease": false,
-        "published_at": "2026-08-12T05:46:29Z",
+        "published_at": "2026-08-14T18:50:29Z",
         "zip": {
-          "name": "tap_to_move_v2.0.0.zip",
-          "url": "https://github.com/ZyranCZ/Tap-to-Move/releases/download/2.0.0/tap_to_move_v2.0.0.zip",
-          "size": 125584
+          "name": "tap_to_move_v2.0.1.zip",
+          "url": "https://github.com/ZyranCZ/Tap-to-Move/releases/download/2.0.1/tap_to_move_v2.0.1.zip",
+          "size": 126129
         }
       },
       "update_check": "ok"
@@ -436,7 +436,7 @@
       "id": "choose_lead",
       "title": "Trainers Let You Choose Lead Pokemon",
       "author": "ZyranCZ",
-      "version": "2.0.0",
+      "version": "2.0.1",
       "summary": "Asks which Pokemon to send out once the opposing one is on screen, instead of always leading with party slot 1.",
       "categories": [
         "QOL"
@@ -457,15 +457,15 @@
       "dependencies": [],
       "conflicts": [],
       "latest": {
-        "version": "2.0.0",
-        "tag": "2.0.0",
-        "name": "2.0.0 GEN 2 Ready",
+        "version": "2.0.1",
+        "tag": "2.0.1",
+        "name": "2.0.1 Ready for 0.1.86 Update",
         "prerelease": false,
-        "published_at": "2026-08-12T01:36:48Z",
+        "published_at": "2026-08-14T18:33:53Z",
         "zip": {
-          "name": "choose_lead_v2.0.0.zip",
-          "url": "https://github.com/ZyranCZ/Trainers-Let-You-Choose-Lead-Pokemon/releases/download/2.0.0/choose_lead_v2.0.0.zip",
-          "size": 17973
+          "name": "choose_lead_v2.0.1.zip",
+          "url": "https://github.com/ZyranCZ/Trainers-Let-You-Choose-Lead-Pokemon/releases/download/2.0.1/choose_lead_v2.0.1.zip",
+          "size": 10385
         }
       },
       "update_check": "ok"
