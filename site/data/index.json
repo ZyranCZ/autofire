@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-14T19:17:02.404Z",
+  "generated_at": "2026-08-15T01:52:28.585Z",
   "count": 12,
   "categories": [
     "GAMEPLAY",
@@ -127,8 +127,8 @@
       "id": "enemy_hp",
       "title": "Enemy HP Readout",
       "author": "ZyranCZ",
-      "version": "2.2.3",
-      "summary": "Shows enemy HP as exact values or percentages in Gen 1 and Gen 2/Gold, with compatibility fixes for Original/Vanilla UI, Gen 3 Inspired UI, and Gen1 Modern UI. Includes an optional complete original battle UI hide mode for replacement UIs.",
+      "version": "2.3.2",
+      "summary": "Shows enemy HP as exact values or percentages in Gen 1 and Gen 2/Gold, with compatibility modes for Original/Vanilla UI, Gen 3 Inspired UI, and Gen1 Modern UI. Includes an optional complete original battle UI hide mode for replacement UIs.",
       "categories": [
         "UI"
       ],
@@ -142,21 +142,19 @@
       "profile": "content",
       "affects_link": false,
       "experimental": false,
-      "permissions": [
-        "engine_internals"
-      ],
+      "permissions": [],
       "dependencies": [],
       "conflicts": [],
       "latest": {
-        "version": "2.2.3",
-        "tag": "2.2.3",
-        "name": "2.2.3 Fixed nonGEN3UI's Visibility",
+        "version": "2.3.2",
+        "tag": "2.3.2",
+        "name": "2.3.2 Ready for 0.1.86 Update",
         "prerelease": false,
-        "published_at": "2026-08-13T04:16:04Z",
+        "published_at": "2026-08-14T19:18:36Z",
         "zip": {
-          "name": "enemy_hp_v2.2.3.zip",
-          "url": "https://github.com/ZyranCZ/Enemy-HP/releases/download/2.2.3/enemy_hp_v2.2.3.zip",
-          "size": 24098
+          "name": "enemy_hp_v2.3.2.zip",
+          "url": "https://github.com/ZyranCZ/Enemy-HP/releases/download/2.3.2/enemy_hp_v2.3.2.zip",
+          "size": 6808
         }
       },
       "update_check": "ok"
@@ -319,8 +317,8 @@
       "id": "special_stat_split",
       "title": "Special Stat Split",
       "author": "ZyranCZ",
-      "version": "2.6.5",
-      "summary": "Generation II Special Attack / Special Defense, optional Generation IV+ per-move Physical/Special split, integrated Move Category readout, automatic Gen 1 + Gold Gen 3 UI inline category compatibility, versioned inter-mod API, link-safe gameplay-option fingerprinting, capability-checked Modern UI compatibility, and optional CRYSTAL 251 interoperability.",
+      "version": "2.7.3",
+      "summary": "Generation II Special Attack / Special Defense, optional Generation IV+ per-move Physical/Special split, integrated category readout, public-hook Gen 1 + Gold support, link-safe gameplay configuration, and compatibility fallbacks for Pokédex Plus, Modern UI, Gen 3 Battle UI and Crystal 251 content.",
       "categories": [
         "GAMEPLAY"
       ],
@@ -340,15 +338,15 @@
       "dependencies": [],
       "conflicts": [],
       "latest": {
-        "version": "2.6.5",
-        "tag": "2.6.5",
-        "name": "2.6.5 Gen1+Gen2 + GEN3UI Compatible",
+        "version": "2.7.3",
+        "tag": "2.7.3",
+        "name": "2.7.3 Ready for 0.1.86 Update",
         "prerelease": false,
-        "published_at": "2026-08-12T17:02:53Z",
+        "published_at": "2026-08-14T19:22:51Z",
         "zip": {
-          "name": "special_stat_split_v2.6.5.zip",
-          "url": "https://github.com/ZyranCZ/Special-Stat-Split/releases/download/2.6.5/special_stat_split_v2.6.5.zip",
-          "size": 178776
+          "name": "special_stat_split_v2.7.3_gen1recomp_v0.1.86.zip",
+          "url": "https://github.com/ZyranCZ/Special-Stat-Split/releases/download/2.7.3/special_stat_split_v2.7.3_gen1recomp_v0.1.86.zip",
+          "size": 25715
         }
       },
       "update_check": "ok"
@@ -397,7 +395,7 @@
       "id": "tap_to_move",
       "title": "Tap to Move",
       "author": "ZyranCZ",
-      "version": "2.0.1",
+      "version": "2.0.5",
       "summary": "Mobile-first pathfinding plus optional renderer-agnostic Simple Touch Movement, smart exits and controls-free touch/motion shortcuts.",
       "categories": [
         "GAMEPLAY"
@@ -418,15 +416,15 @@
       "dependencies": [],
       "conflicts": [],
       "latest": {
-        "version": "2.0.1",
-        "tag": "2.0.1",
-        "name": "2.0.1 Ready for 0.1.86 Update",
+        "version": "2.0.5",
+        "tag": "2.0.5",
+        "name": "2.0.5 Ready for 0.1.86 Update",
         "prerelease": false,
-        "published_at": "2026-08-14T18:50:29Z",
+        "published_at": "2026-08-14T19:54:28Z",
         "zip": {
-          "name": "tap_to_move_v2.0.1.zip",
-          "url": "https://github.com/ZyranCZ/Tap-to-Move/releases/download/2.0.1/tap_to_move_v2.0.1.zip",
-          "size": 126129
+          "name": "tap_to_move_v2.0.5_HOLD_STEER_SPEED_FIX_TEST_BUILD.zip",
+          "url": "https://github.com/ZyranCZ/Tap-to-Move/releases/download/2.0.5/tap_to_move_v2.0.5_HOLD_STEER_SPEED_FIX_TEST_BUILD.zip",
+          "size": 130168
         }
       },
       "update_check": "ok"
