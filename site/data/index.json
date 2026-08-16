@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-15T18:50:14.837Z",
+  "generated_at": "2026-08-16T01:59:52.822Z",
   "count": 12,
   "categories": [
     "GAMEPLAY",
@@ -395,7 +395,7 @@
       "id": "tap_to_move",
       "title": "Tap to Move",
       "author": "ZyranCZ",
-      "version": "2.0.7",
+      "version": "2.2.0",
       "summary": "Mobile-first pathfinding plus optional renderer-agnostic Simple Touch Movement, smart exits and controls-free touch/motion shortcuts.",
       "categories": [
         "GAMEPLAY"
@@ -416,15 +416,15 @@
       "dependencies": [],
       "conflicts": [],
       "latest": {
-        "version": "2.0.7",
-        "tag": "2.0.7",
-        "name": "2.0.7 BattleArt Voxel Compatibility",
+        "version": "2.2.0",
+        "tag": "2.2.0",
+        "name": "2.2.0 Battle Menu New Touch Options",
         "prerelease": false,
-        "published_at": "2026-08-15T05:24:29Z",
+        "published_at": "2026-08-16T01:51:28Z",
         "zip": {
-          "name": "tap_to_move_v2.0.7.zip",
-          "url": "https://github.com/ZyranCZ/Tap-to-Move/releases/download/2.0.7/tap_to_move_v2.0.7.zip",
-          "size": 130697
+          "name": "tap_to_move_v2.2.0.zip",
+          "url": "https://github.com/ZyranCZ/Tap-to-Move/releases/download/2.2.0/tap_to_move_v2.2.0.zip",
+          "size": 134660
         }
       },
       "update_check": "ok"
