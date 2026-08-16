@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-16T01:59:52.822Z",
+  "generated_at": "2026-08-16T07:02:53.484Z",
   "count": 12,
   "categories": [
     "GAMEPLAY",
@@ -127,8 +127,8 @@
       "id": "enemy_hp",
       "title": "Enemy HP Readout",
       "author": "ZyranCZ",
-      "version": "2.3.2",
-      "summary": "Shows enemy HP as exact values or percentages in Gen 1 and Gen 2/Gold, with compatibility modes for Original/Vanilla UI, Gen 3 Inspired UI, and Gen1 Modern UI. Includes an optional complete original battle UI hide mode for replacement UIs.",
+      "version": "2.3.7",
+      "summary": "Shows enemy HP as exact values or percentages in Gen 1 and Gen 2/Gold, with Battle Art transparent native-row extension, PotatoVoxel 1.6.3 classic-frame semi-opaque native-row extension in black ink, and compatibility modes for Original/Vanilla UI, Gen 3 Inspired UI, and Gen1 Modern UI. Includes an optional complete original battle UI hide mode for replacement UIs.",
       "categories": [
         "UI"
       ],
@@ -146,15 +146,15 @@
       "dependencies": [],
       "conflicts": [],
       "latest": {
-        "version": "2.3.2",
-        "tag": "2.3.2",
-        "name": "2.3.2 Ready for 0.1.86 Update",
+        "version": "2.3.7",
+        "tag": "2.3.7",
+        "name": "2.3.7 New Voxel Compatibility",
         "prerelease": false,
-        "published_at": "2026-08-14T19:18:36Z",
+        "published_at": "2026-08-16T02:02:43Z",
         "zip": {
-          "name": "enemy_hp_v2.3.2.zip",
-          "url": "https://github.com/ZyranCZ/Enemy-HP/releases/download/2.3.2/enemy_hp_v2.3.2.zip",
-          "size": 6808
+          "name": "enemy_hp_v2.3.7_potatovoxel_1.6.3_compat.zip",
+          "url": "https://github.com/ZyranCZ/Enemy-HP/releases/download/2.3.7/enemy_hp_v2.3.7_potatovoxel_1.6.3_compat.zip",
+          "size": 9979
         }
       },
       "update_check": "ok"
@@ -395,7 +395,7 @@
       "id": "tap_to_move",
       "title": "Tap to Move",
       "author": "ZyranCZ",
-      "version": "2.2.0",
+      "version": "2.3.3",
       "summary": "Mobile-first pathfinding plus optional renderer-agnostic Simple Touch Movement, smart exits and controls-free touch/motion shortcuts.",
       "categories": [
         "GAMEPLAY"
@@ -416,15 +416,15 @@
       "dependencies": [],
       "conflicts": [],
       "latest": {
-        "version": "2.2.0",
-        "tag": "2.2.0",
-        "name": "2.2.0 Battle Menu New Touch Options",
+        "version": "2.3.3",
+        "tag": "2.3.3",
+        "name": "2.3.3 Added UI Controls",
         "prerelease": false,
-        "published_at": "2026-08-16T01:51:28Z",
+        "published_at": "2026-08-16T02:45:57Z",
         "zip": {
-          "name": "tap_to_move_v2.2.0.zip",
-          "url": "https://github.com/ZyranCZ/Tap-to-Move/releases/download/2.2.0/tap_to_move_v2.2.0.zip",
-          "size": 134660
+          "name": "tap_to_move_v2.3.3.zip",
+          "url": "https://github.com/ZyranCZ/Tap-to-Move/releases/download/2.3.3/tap_to_move_v2.3.3.zip",
+          "size": 142840
         }
       },
       "update_check": "ok"
