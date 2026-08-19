@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-19T07:08:49.383Z",
-  "count": 12,
+  "generated_at": "2026-08-19T13:13:26.289Z",
+  "count": 11,
   "categories": [
     "GAMEPLAY",
     "QOL",
@@ -231,46 +231,6 @@
           "name": "help_story_guide_v2.0.3.zip",
           "url": "https://github.com/ZyranCZ/HELP-Story-Guide/releases/download/2.0.3/help_story_guide_v2.0.3.zip",
           "size": 63889
-        }
-      },
-      "update_check": "ok"
-    },
-    {
-      "folder": "ZyranCZ@move_category",
-      "id": "move_category",
-      "title": "Move Category Readout",
-      "author": "ZyranCZ",
-      "version": "1.0.1",
-      "summary": "Replaces the TYPE/ label in the battle move box with the move's category, so it reads PHYS/FIRE or SPEC/PSYCHIC. Status moves keep TYPE/.",
-      "categories": [
-        "UI"
-      ],
-      "tags": [
-        "Gen1Recomp",
-        "Pokemon"
-      ],
-      "repo": "https://github.com/ZyranCZ/Move-Category-Preview",
-      "github": "ZyranCZ/Move-Category-Preview",
-      "api": 2,
-      "game_version": ">=0.0.0-0 <2.0.0",
-      "profile": "content",
-      "affects_link": false,
-      "experimental": false,
-      "permissions": [
-        "engine_internals"
-      ],
-      "dependencies": [],
-      "conflicts": [],
-      "latest": {
-        "version": "1.0.1",
-        "tag": "1.0.1",
-        "name": "1.0.1",
-        "prerelease": false,
-        "published_at": "2026-08-09T05:37:56Z",
-        "zip": {
-          "name": "move_category_v1_0_1.zip",
-          "url": "https://github.com/ZyranCZ/Move-Category-Preview/releases/download/1.0.1/move_category_v1_0_1.zip",
-          "size": 6639
         }
       },
       "update_check": "ok"
