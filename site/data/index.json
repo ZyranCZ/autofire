@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-15T04:48:54.813Z",
-  "count": 10,
+  "generated_at": "2026-10-15T11:39:06.882Z",
+  "count": 11,
   "categories": [
     "GAMEPLAY",
     "QOL",
@@ -385,6 +385,45 @@
           "name": "tap_to_move_v2.3.3.zip",
           "url": "https://github.com/ZyranCZ/Tap-to-Move/releases/download/2.3.3/tap_to_move_v2.3.3.zip",
           "size": 142840
+        }
+      },
+      "update_check": "ok"
+    },
+    {
+      "folder": "ZyranCZ@choose_lead",
+      "id": "choose_lead",
+      "title": "Trainers Let You Choose Lead Pokemon",
+      "author": "ZyranCZ",
+      "version": "2.0.1",
+      "summary": "Asks which Pokemon to send out once the opposing one is on screen, instead of always leading with party slot 1.",
+      "categories": [
+        "QOL"
+      ],
+      "tags": [
+        "Gen1Recomp",
+        "Pokemon"
+      ],
+      "repo": "https://github.com/ZyranCZ/Trainers-Let-You-Choose-Lead-Pokemon",
+      "github": "ZyranCZ/Trainers-Let-You-Choose-Lead-Pokemon",
+      "api": 2,
+      "profile": "content",
+      "affects_link": false,
+      "experimental": false,
+      "permissions": [
+        "engine_internals"
+      ],
+      "dependencies": [],
+      "conflicts": [],
+      "latest": {
+        "version": "2.0.1",
+        "tag": "2.0.1",
+        "name": "2.0.1 Ready for 0.1.86 Update",
+        "prerelease": false,
+        "published_at": "2026-08-14T18:33:53Z",
+        "zip": {
+          "name": "choose_lead_v2.0.1.zip",
+          "url": "https://github.com/ZyranCZ/Trainers-Let-You-Choose-Lead-Pokemon/releases/download/2.0.1/choose_lead_v2.0.1.zip",
+          "size": 10385
         }
       },
       "update_check": "ok"
